@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_bl %}Create ballot{% endblock %}
+{% block body_bl %}
+<div class="container" style="border: 1px solid black; background-color: #F5F5F5;">
+    <h1 style="text-align:center;">{{title}}</h1>
+   
+
+<form action="" method="post" enctype="multipart/form-data" autocomplete="off">{% csrf_token %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">  
+            <div class="card-body">
+
+                <div class="form-group mb-4">
+                    <div class="text-danger">{{ form.name.errors }}</div>
+                    <label>{{ form.name.label_tag }}</label>
+                    <div class="input-group">
+                        {{ form.name}}
+                        
+                    </div>
+                </div>
+                <div class="form-group mb-4">
+                    <div class="text-danger">{{ form.surname.errors }}</div>
+                    <label>{{ form.surname.label_tag }}</label>
+                    <div class="input-group">
+                        {{ form.surname }}
+                        
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <div class="text-danger">{{ form.photo.errors }}</div>
+                    <label>{{ form.photo.label_tag }}</label>
+                    <div class="input-group">
+                        {{ form.photo }}
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+
+                 <div class="form-group mb-4">
+                    <div class="text-danger">{{ form.national_id.errors }}</div>
+                    <label>{{ form.national_id.label_tag }}</label>
+                    <div class="input-group">
+                        {{ form.national_id }}
+                        
+                    </div>
+                </div>
+                
+                <div class="form-group mb-4">
+                    <div class="text-danger">{{ form.address.errors }}</div>
+                    <label>{{ form.address.label_tag }}</label>
+                    <div class="input-group">
+                        {{ form.address }}
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12">
+     
+      <input type="submit" value="Save Candidate" class="btn btn-success float-left">
+    </div>
+  </div>
+</form> 
+</div>
+{% endblock %}

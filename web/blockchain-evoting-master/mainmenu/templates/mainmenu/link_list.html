@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="row">
+
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Parent link</th>
+                    <th>url</th>
+                    <th>permissions</th>
+                    <th>icon_class</th>
+                    
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for link in links %}
+                <tr>
+                    <th scope="row">{{link.id}}</th>
+                    <td>{{link.name}}</td>
+                    <td>{{link.mainmenu}}</td>
+                    <td>{{link.url}}</td>
+                    <td>{{link.permissions}}</td>
+                    <td>{{link.icon_class}}</td>
+                    
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
